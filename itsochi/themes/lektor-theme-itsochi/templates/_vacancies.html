@@ -1,0 +1,59 @@
+<section class="vacancies" id="vacancies">
+    <div class="vacancies-wrap">
+        <div class="vacancies-content">
+            <div class="vacancies-description">
+                <h1 class="vacancies-title">Самые&nbsp;<span class="span">свежие&nbsp;</span>вакансии в 🌴 Сочи
+                </h1>
+                <div class="vacancies-list">
+                    {% set employers = site.query('/jobs').include_hidden(false).all() %}
+                    {% set exclude = ['/jobs/1740', '/jobs/78638'] %}
+
+                    {% for employer in employers %}
+                        {% if not employer.path in exclude %}
+                            {% set vacancy = site.query(employer.path).include_hidden(false).all() %}
+                            {% for vac in vacancy %}
+                                <div class="vacancy">
+                                    <div class="vacancy-left"><a class="vacancy-title"
+                                                                 href="{{ vac.url }}">{{ vac.title | truncate(30, True) }}</a>
+                                        <div class="vacancy-position">Middle
+                                        </div>
+                                    </div>
+                                    <div class="vacancy-right">
+                                        <div class="vacancy-looking">ищут в
+                                        </div>
+                                        <div class="vacancy-who">{{ employer.title | truncate(20, True) }}
+                                        </div>
+                                        <div class="vacancy-arrow">
+                                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                                 xmlns="http://www.w3.org/2000/svg">
+                                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                                      d="M5 13H16.865L13.232 17.36C12.878 17.784 12.936 18.415 13.36 18.768C13.785 19.122 14.415 19.064 14.769 18.64L19.769 12.64C19.808 12.593 19.827 12.538 19.856 12.486C19.88 12.444 19.909 12.408 19.927 12.362C19.972 12.247 19.999 12.126 19.999 12.004C19.999 12.003 20 12.001 20 12C20 11.999 19.999 11.997 19.999 11.996C19.999 11.874 19.972 11.753 19.927 11.638C19.909 11.592 19.88 11.556 19.856 11.514C19.827 11.462 19.808 11.407 19.769 11.36L14.769 5.36C14.57 5.123 14.286 5 14 5C13.774 5 13.547 5.076 13.36 5.232C12.936 5.585 12.878 6.216 13.232 6.64L16.865 11H5C4.448 11 4 11.448 4 12C4 12.552 4.448 13 5 13Z"/>
+                                            </svg>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            {% endfor %}
+
+                        {% endif %}
+
+                    {% endfor %}
+
+                </div>
+                <div class="vacancies-actions">
+                    <button class="button button_color_transparent button_border_white" type="button"><span
+                            class="button-text">Больше вакансий</span><span class="button-icon"><svg width="24"
+                                                                                                     height="24"
+                                                                                                     viewBox="0 0 24 24"
+                                                                                                     fill="none"
+                                                                                                     xmlns="http://www.w3.org/2000/svg">
+<path fill-rule="evenodd" clip-rule="evenodd"
+      d="M5 13H16.865L13.232 17.36C12.878 17.784 12.936 18.415 13.36 18.768C13.785 19.122 14.415 19.064 14.769 18.64L19.769 12.64C19.808 12.593 19.827 12.538 19.856 12.486C19.88 12.444 19.909 12.408 19.927 12.362C19.972 12.247 19.999 12.126 19.999 12.004C19.999 12.003 20 12.001 20 12C20 11.999 19.999 11.997 19.999 11.996C19.999 11.874 19.972 11.753 19.927 11.638C19.909 11.592 19.88 11.556 19.856 11.514C19.827 11.462 19.808 11.407 19.769 11.36L14.769 5.36C14.57 5.123 14.286 5 14 5C13.774 5 13.547 5.076 13.36 5.232C12.936 5.585 12.878 6.216 13.232 6.64L16.865 11H5C4.448 11 4 11.448 4 12C4 12.552 4.448 13 5 13Z"/>
+</svg>
+</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
