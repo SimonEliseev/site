@@ -1,4 +1,4 @@
-<section class="partner_vacancies" id="partner_vacancies" style="background: #1d1d1d;">
+<section class="partner_vacancies" id="partner_vacancies" style="background: #1d1d1d; overflow: hidden">
     {#    <div class="mission-wrap">#}
     {#        <div class="mission-content">#}
     {#            <div class="mission-blocks">#}
@@ -31,7 +31,7 @@
     {#            </div>#}
     {#        </div>#}
     {#    </div>#}
-    <div style="height: 600px">
+    <div>
         <div class="column">
             <div class="card">
                 <div style="text-align: center">
@@ -53,7 +53,7 @@
                 <ul id='yandex'>
                     {% for foo in yandex_vac %}
                         <li class="block-description">
-                            -{{ foo.title }}
+                            -{{ foo.title}}
                         </li>
                     {% endfor %}
                 </ul>
@@ -83,6 +83,14 @@
                     WellYes
                     </span>
                 </div>
+                {% set wellyes_vac = site.query('/jobs/2568447').include_hidden(false).all() %}
+                <ul id='wellyes'>
+                    {% for foo in wellyes_vac %}
+                        <li class="block-description">
+                            -{{ foo.title }}
+                        </li>
+                    {% endfor %}
+                </ul>
             </div>
         </div>
     </div>

@@ -1,6 +1,7 @@
 window.addEventListener('DOMContentLoaded', () => {
     shuffle(document.querySelector('#yandex'));
     shuffle(document.querySelector('#tinkoff'));
+    shuffle(document.querySelector('#wellyes'));
     // let urbamatica = document.querySelector('#ulvac');
     // let wellyes = document.querySelector('#ulvac');
 

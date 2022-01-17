@@ -11,12 +11,16 @@ def main():
     # urbamatica_vacancy = requests.get()
     yandex_vacancy = requests.get(
         f'{base_api_url}area=237&area=2377&specialization=1&per_page=90&employer_id=1740')
+
     tinkoff_vacancy = requests.get(
         f'{base_api_url}area=237&area=2377&specialization=1&per_page=20&employer_id=78638')
-    # wellyes_vacancy = requests.get('https://api.hh.ru/vacancies?')
-    other_vacancy = requests.get(f'{base_api_url}area=237&area=2377&specialization=1&per_page=2')
 
-    content = {yandex_vacancy, tinkoff_vacancy, other_vacancy}
+    wellyes_vacancy = requests.get(
+        f'{base_api_url}area=237&area=2377&specialization=1&per_page=20&employer_id=2568447')
+
+    other_vacancy = requests.get(f'{base_api_url}area=237&area=2377&specialization=1&per_page=4')
+
+    content = {yandex_vacancy, tinkoff_vacancy, wellyes_vacancy, other_vacancy}
 
     # If directory exist then re-create again else just create directory
     if os.path.exists(base_dir):
@@ -65,19 +69,20 @@ def make_employer(base_dir, company):
 
 
 def make_vacancy(base_dir, company, vacancy):
-    os.mkdir(f'{base_dir}/{company["id"]}/{vacancy["id"]}')
-    with open(f'{base_dir}/{company["id"]}/{vacancy["id"]}/contents.lr', 'w') as f:
-        f.write(f'title:{vacancy["name"]}'
-                f'\n---\n'
-                f'url:{vacancy["alternate_url"]}')
-    with open(f'{base_dir}/{company["id"]}/{vacancy["id"]}/contents+en.lr', 'w') as f:
-        f.write(f'title:{vacancy["name"]}'
-                f'\n---\n'
-                f'url:{vacancy["alternate_url"]}')
-    with open(f'{base_dir}/{company["id"]}/{vacancy["id"]}/contents+ru.lr', 'w') as f:
-        f.write(f'title:{vacancy["name"]}'
-                f'\n---\n'
-                f'url:{vacancy["alternate_url"]}')
+    if not(os.path.exists(f'{base_dir}/{company["id"]}/{vacancy["id"]}')):
+        os.mkdir(f'{base_dir}/{company["id"]}/{vacancy["id"]}')
+        with open(f'{base_dir}/{company["id"]}/{vacancy["id"]}/contents.lr', 'w') as f:
+            f.write(f'title:{vacancy["name"]}'
+                    f'\n---\n'
+                    f'url:{vacancy["alternate_url"]}')
+        with open(f'{base_dir}/{company["id"]}/{vacancy["id"]}/contents+en.lr', 'w') as f:
+            f.write(f'title:{vacancy["name"]}'
+                    f'\n---\n'
+                    f'url:{vacancy["alternate_url"]}')
+        with open(f'{base_dir}/{company["id"]}/{vacancy["id"]}/contents+ru.lr', 'w') as f:
+            f.write(f'title:{vacancy["name"]}'
+                    f'\n---\n'
+                    f'url:{vacancy["alternate_url"]}')
 
 
 if __name__ == "__main__":

@@ -6,7 +6,7 @@
                 </h1>
                 <div class="vacancies-list">
                     {% set employers = site.query('/jobs').include_hidden(false).all() %}
-                    {% set exclude = ['/jobs/1740', '/jobs/78638'] %}
+                    {% set exclude = ['/jobs/1740', '/jobs/78638', '/jobs/2568447'] %}
 
                     {% for employer in employers %}
                         {% if not employer.path in exclude %}
@@ -15,8 +15,6 @@
                                 <div class="vacancy">
                                     <div class="vacancy-left"><a class="vacancy-title"
                                                                  href="{{ vac.url }}">{{ vac.title | truncate(30, True) }}</a>
-                                        <div class="vacancy-position">Middle
-                                        </div>
                                     </div>
                                     <div class="vacancy-right">
                                         <div class="vacancy-looking">ищут в
