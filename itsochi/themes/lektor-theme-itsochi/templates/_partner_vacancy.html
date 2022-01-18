@@ -1,36 +1,4 @@
 <section class="partner_vacancies" id="partner_vacancies" style="background: #1d1d1d; overflow: hidden">
-    {#    <div class="mission-wrap">#}
-    {#        <div class="mission-content">#}
-    {#            <div class="mission-blocks">#}
-    {#                <div class="missions">#}
-    {#                    <div class="missions-wrap">#}
-    {#                        <div class="block swiper-slide-active" style="width: 309.333px; margin-right: 16px;">#}
-    {#                            <div class="block-wrap">#}
-    {#                                <div class="block-content" style="height: 600px; width: 309px; overflow: hidden">#}
-    {#                                    <div class="block-title" style="height: 30px; position: center">#}
-    {#                                            <span style="margin: 50px;">#}
-    {#                                                Urbamatica#}
-    {#                                            </span>#}
-    {#                                    </div>#}
-    {#                                    <div class="block-description" style="height: 500px;">#}
-    {#                                            {% set yandex_vac = site.query('/jobs/1740').include_hidden(false).all() %}#}
-    {#                                            <ul id='ulvac'>#}
-    {#                                                {% for foo in yandex_vac %}#}
-    {#                                                <li>#}
-    {#                                                    -{{ foo.title }}#}
-    {#                                                </li>#}
-    {#                                            {% endfor %}#}
-    {#                                            </ul>#}
-    {##}
-    {#                                    </div>#}
-    {#                                </div>#}
-    {#                            </div>#}
-    {#                        </div>#}
-    {#                    </div>#}
-    {#                </div>#}
-    {#            </div>#}
-    {#        </div>#}
-    {#    </div>#}
     <div>
         <div class="column">
             <div class="card">
@@ -42,7 +10,9 @@
             </div>
         </div>
         <div class="column">
+
             <div class="card">
+
                 <div style="text-align: center">
                     <span class="block-title">
                     Yandex
@@ -53,11 +23,16 @@
                 <ul id='yandex'>
                     {% for foo in yandex_vac %}
                         <li class="block-description">
-                            -{{ foo.title}}
+                            -{{ foo.title }}
                         </li>
                     {% endfor %}
                 </ul>
+
             </div>
+
+            <div style="background: linear-gradient(transparent, gray); position: absolute; height: 60px">
+            </div>
+
         </div>
         <div class="column">
             <div class="card">
