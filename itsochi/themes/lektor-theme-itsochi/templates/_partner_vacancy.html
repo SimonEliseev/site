@@ -9,31 +9,56 @@
                 </div>
             </div>
         </div>
-        <div class="column">
+      <div class="column">
+        <div class="card" style="position: relative">
+          <div style="text-align: center">
+            <span class="block-title">
+              Yandex
+            </span>
+          </div>
 
-            <div class="card">
+          <!--{% set yandex_vac = site.query('/jobs/1740').include_hidden(false).all() %}-->
+          <ul id='yandex'>
+            <li class="block-description">- Вакансия flutter-разработчика для агрегатора сервисов доставки еды</li>
+            <li class="block-description">- Вакансия flutter-разработчика для агрегатора сервисов доставки еды</li>
+            <li class="block-description">- Вакансия flutter-разработчика для агрегатора сервисов доставки еды</li>
+            <li class="block-description">- Вакансия flutter-разработчика для агрегатора сервисов доставки еды</li>
+            <li class="block-description">- Вакансия flutter-разработчика для агрегатора сервисов доставки еды</li>
+            <li class="block-description">- Вакансия flutter-разработчика для агрегатора сервисов доставки еды</li>
+            <li class="block-description">- Вакансия flutter-разработчика для агрегатора сервисов доставки еды</li>
+            <li class="block-description">- Вакансия flutter-разработчика для агрегатора сервисов доставки еды</li>
+            <li class="block-description">- Вакансия flutter-разработчика для агрегатора сервисов доставки еды</li>
+            <li class="block-description">- Вакансия flutter-разработчика для агрегатора сервисов доставки еды</li>
+            <li class="block-description">- Вакансия flutter-разработчика для агрегатора сервисов доставки еды</li>
+            <li class="block-description">- Вакансия flutter-разработчика для агрегатора сервисов доставки еды</li>
+            <li class="block-description">- Вакансия flutter-разработчика для агрегатора сервисов доставки еды</li>
+            <li class="block-description">- Вакансия flutter-разработчика для агрегатора сервисов доставки еды</li>
+            <li class="block-description">- Вакансия flutter-разработчика для агрегатора сервисов доставки еды</li>
+            <li class="block-description">- Вакансия flutter-разработчика для агрегатора сервисов доставки еды</li>
+            <li class="block-description">- Вакансия flutter-разработчика для агрегатора сервисов доставки еды</li>
+            <li class="block-description">- Вакансия flutter-разработчика для агрегатора сервисов доставки еды</li>
+            <li class="block-description">- Вакансия flutter-разработчика для агрегатора сервисов доставки еды</li>
+            <li class="block-description">- Вакансия flutter-разработчика для агрегатора сервисов доставки еды</li>
+            <!--{% for foo in yandex_vac %}-->
+            <!--<li class="block-description">-->
+            <!--    -{{ foo.title }}-->
+            <!--</li>-->
+            <!--{% endfor %}-->
+          </ul>
 
-                <div style="text-align: center">
-                    <span class="block-title">
-                    Yandex
-                    </span>
-                </div>
-
-                {% set yandex_vac = site.query('/jobs/1740').include_hidden(false).all() %}
-                <ul id='yandex'>
-                    {% for foo in yandex_vac %}
-                        <li class="block-description">
-                            -{{ foo.title }}
-                        </li>
-                    {% endfor %}
-                </ul>
-
-            </div>
-
-            <div style="background: linear-gradient(transparent, gray); position: absolute; height: 60px">
-            </div>
-
+          <div
+            style="
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            height: 80px;
+            background: linear-gradient(transparent, #f1f1f1);
+          ">
+          </div>
         </div>
+      </div>
+
         <div class="column">
             <div class="card">
                 <div style="text-align: center">
