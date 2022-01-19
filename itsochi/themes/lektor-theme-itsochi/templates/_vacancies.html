@@ -6,7 +6,7 @@
                 </h1>
                 <div class="vacancies-list">
                     {% set employers = site.query('/jobs').include_hidden(false).all() %}
-                    {% set exclude = ['/jobs/1740', '/jobs/78638', '/jobs/2568447'] %}
+                    {% set exclude = ['/jobs/1740', '/jobs/78638', '/jobs/2568447', '/jobs/5461019'] %}
 
                     {% for employer in employers %}
                         {% if not employer.path in exclude %}

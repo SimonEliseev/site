@@ -1,96 +1,115 @@
 <section class="partner_vacancies" id="partner_vacancies" style="background: #1d1d1d; overflow: hidden">
     <div>
         <div class="column">
-            <div class="card">
-                <div style="text-align: center">
-                    <span class="block-title">
+            <div class="card" style="position: relative">
+                <div style="text-align: center;" class="block-title">
+                    <span>
                         Urbamatica
                     </span>
                 </div>
+
+                {% set urbamatica_vac = site.query('/jobs/5461019').include_hidden(false).all() %}
+                {% if urbamatica_vac %}
+                    <ul id='urbamatica'>
+                        {% for foo in urbamatica_vac %}
+                            <li class="block-description">
+                            <div>
+                                <div style="text-align: left">{{ foo.title }}</div>
+                                <div style="text-align: right; font-size: 12px; color: gray;">График работы: {{ foo.schedule }}</div>
+                            </div>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                {% else %}
+                    Вакансии отошли на перерыв
+                {% endif %}
+
+                <div style="position: absolute;left: 0;bottom: 0;width: 100%;height: 80px;background: linear-gradient(transparent, #f1f1f1);">
+                </div>
             </div>
         </div>
-      <div class="column">
-        <div class="card" style="position: relative">
-          <div style="text-align: center">
-            <span class="block-title">
-              Yandex
-            </span>
-          </div>
+        <div class="column">
+            <div class="card" style="position: relative">
+                <div style="text-align: center;" class="block-title">
+                    <span>
+                        Yandex
+                    </span>
+                </div>
 
-          <!--{% set yandex_vac = site.query('/jobs/1740').include_hidden(false).all() %}-->
-          <ul id='yandex'>
-            <li class="block-description">- Вакансия flutter-разработчика для агрегатора сервисов доставки еды</li>
-            <li class="block-description">- Вакансия flutter-разработчика для агрегатора сервисов доставки еды</li>
-            <li class="block-description">- Вакансия flutter-разработчика для агрегатора сервисов доставки еды</li>
-            <li class="block-description">- Вакансия flutter-разработчика для агрегатора сервисов доставки еды</li>
-            <li class="block-description">- Вакансия flutter-разработчика для агрегатора сервисов доставки еды</li>
-            <li class="block-description">- Вакансия flutter-разработчика для агрегатора сервисов доставки еды</li>
-            <li class="block-description">- Вакансия flutter-разработчика для агрегатора сервисов доставки еды</li>
-            <li class="block-description">- Вакансия flutter-разработчика для агрегатора сервисов доставки еды</li>
-            <li class="block-description">- Вакансия flutter-разработчика для агрегатора сервисов доставки еды</li>
-            <li class="block-description">- Вакансия flutter-разработчика для агрегатора сервисов доставки еды</li>
-            <li class="block-description">- Вакансия flutter-разработчика для агрегатора сервисов доставки еды</li>
-            <li class="block-description">- Вакансия flutter-разработчика для агрегатора сервисов доставки еды</li>
-            <li class="block-description">- Вакансия flutter-разработчика для агрегатора сервисов доставки еды</li>
-            <li class="block-description">- Вакансия flutter-разработчика для агрегатора сервисов доставки еды</li>
-            <li class="block-description">- Вакансия flutter-разработчика для агрегатора сервисов доставки еды</li>
-            <li class="block-description">- Вакансия flutter-разработчика для агрегатора сервисов доставки еды</li>
-            <li class="block-description">- Вакансия flutter-разработчика для агрегатора сервисов доставки еды</li>
-            <li class="block-description">- Вакансия flutter-разработчика для агрегатора сервисов доставки еды</li>
-            <li class="block-description">- Вакансия flutter-разработчика для агрегатора сервисов доставки еды</li>
-            <li class="block-description">- Вакансия flutter-разработчика для агрегатора сервисов доставки еды</li>
-            <!--{% for foo in yandex_vac %}-->
-            <!--<li class="block-description">-->
-            <!--    -{{ foo.title }}-->
-            <!--</li>-->
-            <!--{% endfor %}-->
-          </ul>
+                {% set yandex_vac = site.query('/jobs/1740').include_hidden(false).all() %}
+                {% if yandex_vac %}
+                    <ul id='yandex'>
+                        {% for foo in yandex_vac %}
+                            <li class="block-description">
+                            <div>
+                                <div style="text-align: left">{{ foo.title }}</div>
+                                <div style="text-align: right; font-size: 12px; color: gray;">График работы: {{ foo.schedule }}</div>
+                            </div>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                {% else %}
+                    Вакансии отошли на перерыв
+                {% endif %}
 
-          <div
-            style="
-            position: absolute;
-            left: 0;
-            bottom: 0;
-            width: 100%;
-            height: 80px;
-            background: linear-gradient(transparent, #f1f1f1);
-          ">
-          </div>
+
+                <div style="position: absolute;left: 0;bottom: 0;width: 100%;height: 80px;background: linear-gradient(transparent, #f1f1f1);">
+                </div>
+            </div>
         </div>
-      </div>
 
         <div class="column">
-            <div class="card">
-                <div style="text-align: center">
-                    <span class="block-title">
+            <div class="card" style="position: relative">
+                <div style="text-align: center;" class="block-title">
+                    <span>
                     Tinkoff
                     </span>
                 </div>
                 {% set tinkoff_vac = site.query('/jobs/78638').include_hidden(false).all() %}
-                <ul id='tinkoff'>
-                    {% for foo in tinkoff_vac %}
-                        <li class="block-description">
-                            -{{ foo.title }}
-                        </li>
-                    {% endfor %}
-                </ul>
+
+                {% if tinkoff_vac %}
+                    <ul id='tinkoff'>
+                        {% for foo in tinkoff_vac %}
+                            <li class="block-description">
+                            <div>
+                                <div style="text-align: left">{{ foo.title }}</div>
+                                <div style="text-align: right; font-size: 12px; color: gray;">График работы: {{ foo.schedule }}</div>
+                            </div>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                {% else %}
+                    Вакансии отошли на перерыв
+                {% endif %}
+                <div style="position: absolute;left: 0;bottom: 0;width: 100%;height: 80px;background: linear-gradient(transparent, #f1f1f1);">
+                </div>
             </div>
         </div>
         <div class="column">
-            <div class="card">
-                <div style="text-align: center">
-                    <span class="block-title">
+            <div class="card" style="position: relative">
+                <div style="text-align: center;" class="block-title">
+                    <span>
                     WellYes
                     </span>
                 </div>
                 {% set wellyes_vac = site.query('/jobs/2568447').include_hidden(false).all() %}
-                <ul id='wellyes'>
-                    {% for foo in wellyes_vac %}
-                        <li class="block-description">
-                            -{{ foo.title }}
-                        </li>
-                    {% endfor %}
-                </ul>
+
+                {% if wellyes_vac %}
+                    <ul id='wellyes'>
+                        {% for foo in wellyes_vac %}
+                            <li class="block-description">
+                            <div>
+                                <div style="text-align: left">{{ foo.title }}</div>
+                                <div style="text-align: right; font-size: 12px; color: gray;">График работы: {{ foo.schedule }}</div>
+                            </div>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                {% else %}
+                    Вакансии отошли на перерыв
+                {% endif %}
+                <div style="position: absolute;left: 0;bottom: 0;width: 100%;height: 80px;background: linear-gradient(transparent, #f1f1f1);">
+                </div>
             </div>
         </div>
     </div>

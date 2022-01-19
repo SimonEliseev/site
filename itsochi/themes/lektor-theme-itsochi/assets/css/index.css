@@ -524,7 +524,7 @@ li, ul {
     font-weight: 700;
     font-size: 24px;
     line-height: 32px;
-    margin-bottom: 24px
+    margin-bottom: 24px;
 }
 
 .block-description {
@@ -1017,8 +1017,8 @@ li, ul {
     content: "";
     width: 100%;
     height: 85px;
-    background: -webkit-gradient(linear, left bottom, right top, color-stop(50%, #fff), color-stop(52%, #1d1d1d));
-    background: linear-gradient(to right top, #fff 50%, #1d1d1d 52%);
+    background: -webkit-gradient(linear, left bottom, right top, color-stop(50%, #fece2f), color-stop(52%, #1d1d1d));
+    background: linear-gradient(to right top, #fece2f 50%, #1d1d1d 52%);
     display: block
 }
 
@@ -2946,7 +2946,7 @@ li, ul {
     padding: 16px;
     text-align: left;
     background-color: #f1f1f1;
-    height: 800px;
+    height: 700px;
     border-radius: 10px;
     overflow: hidden;
     font-size: 16px;
